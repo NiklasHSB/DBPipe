@@ -1,4 +1,8 @@
 node {
+    stage('check out pipeline from Git') {
+		checkout scm
+	}
+
     stage('Getting information'){
         sh 'echo $WORKSPACE'
         sh 'echo $JENKINS_HOME'
