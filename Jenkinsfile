@@ -6,7 +6,8 @@ node {
     stage('testing') {
         //sh 'aws --recursive s3 cp s3://liquibaseinstallerbucket/ $WORKSPACE'
         //sh 'ansible-playbook $WORKSPACE/DownloadGitRepo.yml'
-        sh 'liquibase --version'
+        //sh 'liquibase --version'
+        sh '$WORKSPACE/GitLiqui/liquibase  --version'
 
     }
     /*
