@@ -44,6 +44,7 @@ node {
         //sh '$WORKSPACE/liquibase/liquibase --url="jdbc:mysql://hoc-lquibasetestdb.cwvfr0uoks1w.eu-central-1.rds.amazonaws.com:3306/HomeOfCloudsDB" --changeLogFile=SQLChangelog.sql --driver=com.mysql.cj.jdbc.Driver --classpath=$WORKSPACE/liquibase/mysql-connector-java-8.0.26.jar --username=admin --password=HomeOfClouds rollbackCount 1'    
         //sh '$WORKSPACE/liquibase/Rollback.sh'
     }
-    */ 
+     
     }
+    */
 }
