@@ -6,7 +6,6 @@ node {
     stage('Getting information'){
         sh 'echo $WORKSPACE'
         sh 'echo $JENKINS_HOME'
-        propslist = readFile("$WORKSPACE/Changelog.sql")
     }
     stage('Check if liquibase is installed') {
         //sh 'aws --recursive s3 cp s3://liquibaseinstallerbucket/ $WORKSPACE'
