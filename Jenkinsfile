@@ -1,5 +1,5 @@
 node {
-    stage('check out pipeline from Git') {
+    /*stage('check out pipeline from Git') {
 		nexusArtifactDownload([
 		    credentialsId: "${NEXUS_CREDENTIALS_ID}",
 		    nexusUrl     : "${NEXUS_URL}/${NEXUS_REPO_RAW}/${NEXUS_RAW_PATH}/${NEXUS_RAW_NAME}",
@@ -9,7 +9,7 @@ node {
 			insecure     : true
 			]
 			)
-	}
+	}*/
 
     stage('Getting information'){
         sh 'echo $WORKSPACE'
