@@ -11,7 +11,7 @@ node {
 
     }
     stage('Status'){
-        sh '$WORKSPACE/liquibase/liquibase  status --url="jdbc:mysql://hoc-lquibasetestdb.cwvfr0uoks1w.eu-central-1.rds.amazonaws.com:3306" --changeLogFile=Changelog.sql --driver=com.mysql.cj.jdbc.Driver --classpath=$WORKSPACE/liquibase/mysql-connector-java-8.0.26.jar --username= --password=HomeOfClouds'
+        sh '$WORKSPACE/liquibase/liquibase  status --url="jdbc:mysql://hoc-lquibasetestdb.cwvfr0uoks1w.eu-central-1.rds.amazonaws.com:3306" --changeLogFile=Changelog.sql --driver=com.mysql.cj.jdbc.Driver --classpath=$WORKSPACE/liquibase/mysql-connector-java-8.0.26.jar --username=admin --password=HomeOfClouds'
     }
     /*
     stage('Unzip') {
