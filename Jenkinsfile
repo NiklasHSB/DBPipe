@@ -3,15 +3,18 @@ node {
         sh 'echo $WORKSPACE'
         sh 'echo $JENKINS_HOME'
     }
-    stage('testing') {
+    stage('Check if liquibase is installed') {
         //sh 'aws --recursive s3 cp s3://liquibaseinstallerbucket/ $WORKSPACE'
         //sh 'ansible-playbook $WORKSPACE/DownloadGitRepo.yml'
-        sh 'liquibase --version'
-        //sh '$WORKSPACE/liquibase/liquibase  --version'
+        //sh 'liquibase --version'
+        sh '$WORKSPACE/liquibase/liquibase  --version'
 
     }
+    stage('Status'){
+        sh '$WORKSPACE/liquibase/liquibase  status --url="jdbc:mysql://hoc-lquibasetestdb.cwvfr0uoks1w.eu-central-1.rds.amazonaws.com:3306" --changeLogFile=Changelog.sql --driver=com.mysql.cj.jdbc.Driver --classpath=$WORKSPACE/liquibase/mysql-connector-java-8.0.26.jar --username= --password=HomeOfClouds'
+    }
     /*
-    stage('Unzip Data') {
+    stage('Unzip') {
         //sh 'ansible-playbook $WORKSPACE/Unzip_File.yml'
         //sh 'tar -xzvf $WORKSPACE/liquibaseFiles.tar.gz'
     }
