@@ -3,11 +3,13 @@ node {
         sh 'echo $WORKSPACE'
         sh 'echo $JENKINS_HOME'
     }
-    stage('Download from Repo') {
+    stage('testing') {
         //sh 'aws --recursive s3 cp s3://liquibaseinstallerbucket/ $WORKSPACE'
         //sh 'ansible-playbook $WORKSPACE/DownloadGitRepo.yml'
+        sh 'liquibase --version'
 
     }
+    /*
     stage('Unzip Data') {
         //sh 'ansible-playbook $WORKSPACE/Unzip_File.yml'
         //sh 'tar -xzvf $WORKSPACE/liquibaseFiles.tar.gz'
@@ -42,6 +44,6 @@ node {
         //sh '$WORKSPACE/liquibase/liquibase --url="jdbc:mysql://hoc-lquibasetestdb.cwvfr0uoks1w.eu-central-1.rds.amazonaws.com:3306/HomeOfCloudsDB" --changeLogFile=SQLChangelog.sql --driver=com.mysql.cj.jdbc.Driver --classpath=$WORKSPACE/liquibase/mysql-connector-java-8.0.26.jar --username=admin --password=HomeOfClouds rollbackCount 1'    
         //sh '$WORKSPACE/liquibase/Rollback.sh'
     }
-        
+    */ 
     }
 }
